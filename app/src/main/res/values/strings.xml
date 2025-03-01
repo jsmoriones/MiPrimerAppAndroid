@@ -26,4 +26,6 @@
     <string name="seleccionar_opcion">Selecciona Opcion Correcta</string>
     <string name="prod_sound">Producir sonido:</string>
     <string name="continuar">Continuar</string>
+    <string name="fallaste">Fallaste</string>
+    <string name="ganaste">Ganaste</string>
 </resources>

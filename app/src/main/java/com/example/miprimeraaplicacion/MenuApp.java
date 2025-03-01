@@ -33,7 +33,7 @@ public class MenuApp extends AppCompatActivity {
         btnColores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuApp.this, Game1.class);
+                Intent intent = new Intent(MenuApp.this, Game2.class);
                 startActivity(intent);
             }
         });

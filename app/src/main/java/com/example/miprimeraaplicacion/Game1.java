@@ -1,19 +1,16 @@
 package com.example.miprimeraaplicacion;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Game1 extends AppCompatActivity {
     LinearLayout cntGame1;
@@ -40,7 +37,10 @@ public class Game1 extends AppCompatActivity {
         cntGame1 = findViewById(R.id.cntGame1);
         btnNextGame = findViewById(R.id.btnNextGame);
 
+
+
         cntGame1.setVisibility(View.INVISIBLE);
+        btnNextGame.setVisibility(View.INVISIBLE);
 
         imgSonidoJuego1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +52,7 @@ public class Game1 extends AppCompatActivity {
             }
         });
 
-        lavadomanos.setOnClickListener(new View.OnClickListener() {
+        /*lavadomanos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -86,13 +86,13 @@ public class Game1 extends AppCompatActivity {
 
                 validateValue("sonrisa");
             }
-        });
+        });*/
 
 
 
     }
 
-    public void validateValue(String value){
+    /*public void validateValue(String value){
         switch (value){
             case "lavamanos":
                 errorSonido = MediaPlayer.create(Game1.this, R.raw.error);
@@ -135,5 +135,72 @@ public class Game1 extends AppCompatActivity {
             default:
                 throw new IllegalStateException("Unexpected value: " + value);
         }
+    }*/
+
+    public void clickHandler(View v){
+        System.out.println("ClickHandler");
+        //Codigo necesario para cambiar a blanco y negro las imagenes
+        ColorMatrix matrix = new ColorMatrix();
+        matrix.setSaturation(0);
+        ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+
+        int id = v.getId();
+        if (id == R.id.lavadomanos) {
+            errorSonido = MediaPlayer.create(Game1.this, R.raw.error);
+            errorSonido.start();
+
+            lavadomanos.setOnClickListener(null);
+            zapato.setOnClickListener(null);
+            car.setOnClickListener(null);
+            sonrisa.setOnClickListener(null);
+
+            zapato.setColorFilter(filter);
+            car.setColorFilter(filter);
+            sonrisa.setColorFilter(filter);
+
+            Toast.makeText(this, R.string.fallaste, Toast.LENGTH_SHORT).show();
+        }else if(id == R.id.zapato){
+            errorSonido = MediaPlayer.create(Game1.this, R.raw.error);
+            errorSonido.start();
+
+            lavadomanos.setOnClickListener(null);
+            zapato.setOnClickListener(null);
+            car.setOnClickListener(null);
+            sonrisa.setOnClickListener(null);
+
+            lavadomanos.setColorFilter(filter);
+            car.setColorFilter(filter);
+            sonrisa.setColorFilter(filter);
+
+            Toast.makeText(this, R.string.fallaste, Toast.LENGTH_SHORT).show();
+        }else if(id == R.id.car){
+            successSonido = MediaPlayer.create(Game1.this, R.raw.success);
+            successSonido.start();
+
+            lavadomanos.setOnClickListener(null);
+            zapato.setOnClickListener(null);
+            car.setOnClickListener(null);
+            sonrisa.setOnClickListener(null);
+
+            lavadomanos.setColorFilter(filter);
+            zapato.setColorFilter(filter);
+            sonrisa.setColorFilter(filter);
+
+            Toast.makeText(this, R.string.ganaste, Toast.LENGTH_SHORT).show();
+        }else if(id == R.id.sonrisa){
+            errorSonido = MediaPlayer.create(Game1.this, R.raw.error);
+            errorSonido.start();
+
+            lavadomanos.setOnClickListener(null);
+            zapato.setOnClickListener(null);
+            car.setOnClickListener(null);
+            sonrisa.setOnClickListener(null);
+
+            sonrisa.setColorFilter(filter);
+
+            Toast.makeText(this, R.string.fallaste, Toast.LENGTH_SHORT).show();
+        }
+
+        btnNextGame.setVisibility(View.VISIBLE);
     }
 }
