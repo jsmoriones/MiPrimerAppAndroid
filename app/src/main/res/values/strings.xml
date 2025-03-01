@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">MiPrimeraAplicacion</string>
+    <string name="titulo">Mi First App</string>
+    <string name="tituloSiguiente">Siguiente</string>
+    <string name="tituloMenu">Menu</string>
+    <string name="tituloColores">Colores</string>
+    <string name="tituloAnimales">Animales</string>
+    <string name="tituloFrutas">Frutas</string>
+    <string name="textoVaca">Vaca</string>
+    <string name="textoPerro">Perro</string>
+    <string name="textoGato">Gato</string>
+    <string name="textoManzana">Manzana</string>
+    <string name="textoBanana">Banana</string>
+    <string name="textoPera">Pera</string>
+    <string name="textoRojo">Rojo</string>
+    <string name="textoAzul">Azul</string>
+    <string name="textoVerde">Verde</string>
+    <string name="textoVolver">Volver</string>
+    <string name="selectOptionApp">Seleccionar una Opción</string>
+    <string name="textoAprendizaje">Aprender</string>
+    <string name="textoJuego">Jugar</string>
+    <string name="textoJuego1">Juego 1</string>
+    <string name="textoJuego2">Juego 2</string>
+    <string name="textoJuego3">Juego 3</string>
+    <string name="textoJuego4">Juego 4</string>
+    <string name="seleccionar_opcion">Selecciona Opcion Correcta</string>
+    <string name="prod_sound">Producir sonido:</string>
+    <string name="continuar">Continuar</string>
+</resources>
