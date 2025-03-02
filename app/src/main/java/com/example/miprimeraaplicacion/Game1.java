@@ -1,5 +1,6 @@
 package com.example.miprimeraaplicacion;
 
+import android.content.Intent;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.media.MediaPlayer;
@@ -49,6 +50,14 @@ public class Game1 extends AppCompatActivity {
                 sonidoBafle1.start();
 
                 cntGame1.setVisibility(View.VISIBLE);
+            }
+        });
+
+        btnNextGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Game1.this, Game2.class);
+                startActivity(intent);
             }
         });
 

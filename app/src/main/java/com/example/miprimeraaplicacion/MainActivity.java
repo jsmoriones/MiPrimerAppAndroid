@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Codigo para sara a otra vista | con este codigo hacemos el la navegacion de la aplicacion
-                Intent intent = new Intent(MainActivity.this, MenuApp.class);
+                Intent intent = new Intent(MainActivity.this, OptionalView.class);
                 startActivity(intent);
             }
         });

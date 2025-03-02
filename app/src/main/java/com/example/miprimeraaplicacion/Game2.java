@@ -1,5 +1,6 @@
 package com.example.miprimeraaplicacion;
 
+import android.content.Intent;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.media.MediaPlayer;
@@ -7,12 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Game2 extends AppCompatActivity {
 
+    LinearLayout cntGame2;
     ImageView imgSonidoJuego2;
     ImageView gallo;
     ImageView abuelo;
@@ -21,25 +24,39 @@ public class Game2 extends AppCompatActivity {
     MediaPlayer sonidoBafle2;
     MediaPlayer errorSonido;
     MediaPlayer successSonido;
-    Button btnNextGame;
+    Button btnNextGame2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game2);
 
+        cntGame2 = findViewById(R.id.cntGame2);
         imgSonidoJuego2 = findViewById(R.id.imgSonidoJuego2);
         gallo = findViewById(R.id.gallo);
         abuelo = findViewById(R.id.abuelo);
         setenta = findViewById(R.id.setenta);
         caballo = findViewById(R.id.caballo);
-        btnNextGame = findViewById(R.id.btnNextGame);
+        btnNextGame2 = findViewById(R.id.btnNextGame2);
+
+        cntGame2.setVisibility(View.INVISIBLE);
+        btnNextGame2.setVisibility(View.INVISIBLE);
 
         imgSonidoJuego2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sonidoBafle2 = MediaPlayer.create(Game2.this, R.raw.chicken);
                 sonidoBafle2.start();
+
+                cntGame2.setVisibility(View.VISIBLE);
+            }
+        });
+
+        btnNextGame2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Game2.this, Game3.class);
+                startActivity(intent);
             }
         });
     }
@@ -108,5 +125,7 @@ public class Game2 extends AppCompatActivity {
 
             Toast.makeText(this, R.string.fallaste, Toast.LENGTH_SHORT).show();
         }
+
+        btnNextGame2.setVisibility(View.VISIBLE);
     }
 }

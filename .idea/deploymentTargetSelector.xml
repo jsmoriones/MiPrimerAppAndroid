@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-02-27T07:48:03.860908900Z">
+        <DropdownSelection timestamp="2025-03-02T07:36:45.155875500Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=R9JN30L17WJ" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=ZY223SZKFQ" />
             </handle>
           </Target>
         </DropdownSelection>
@@ -17,6 +17,9 @@
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
       <SelectionState runConfigName="Game1 (1)">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="Game2">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
